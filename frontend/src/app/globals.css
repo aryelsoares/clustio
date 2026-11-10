@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --background: #101827;
+  --background-second: #162238;
+  --background-third: #1d2d47;
+  --foreground: #f4f6f8;
+  --trigger: #e5b84b;
+}
+
+html {
+  font-size: 70%;
+  overflow-x: hidden;
+}
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-bg-second: var(--background-second);
+  --color-bg-third: var(--background-third);
+  --color-text: var(--foreground);
+  --color-main: var(--trigger);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24;
+}

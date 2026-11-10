@@ -1,0 +1,43 @@
+# Clustio
+
+services:
+  # Python
+  backend:
+    container_name: clustio-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      MONGODB_URL: mongodb://mongodb:27017
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+  
+  # MongoDB
+  mongodb:
+    image: mongo:8
+    container_name: clustio-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+  # Next.js / React
+  frontend:
+    container_name: clustio-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:

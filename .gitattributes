@@ -1,0 +1,15 @@
+# Third-party dependencies
+/frontend/node_modules/** linguist-vendored
+/backend/venv/** linguist-vendored
+
+# Generated files
+/frontend/.next/** linguist-generated
+/frontend/out/** linguist-generated
+
+# Ignore CSS statistics
+*.css linguist-vendored
+
+# Ignore JavaScript statistics
+*.js linguist-vendored
+*.mjs linguist-vendored
+*.cjs linguist-vendored
