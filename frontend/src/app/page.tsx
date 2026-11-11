@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Charts from "@/components/Charts";
-import Footer from "@/components/Footer";
 import { Result } from "@/types/data";
 import { processCSV, injectCSV, resetCSV } from "@/services/api";
 
@@ -164,7 +163,6 @@ export default function Home() {
       <main className="bg-fixed bg-center bg-cover">
         <Charts result={result} />
       </main>
-      <Footer/>
     </>
   );
 }

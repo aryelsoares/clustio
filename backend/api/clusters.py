@@ -60,7 +60,7 @@ class Clustio:
 
         if self.data.shape[1] > 2:
             self.pca = PCA(n_components=2)
-            self.source = self.pca.fit_transform(self.data)
+            self.source = self.pca.fit_transform(self.data).tolist()
 
     # KMeans
     def KMeans(self):

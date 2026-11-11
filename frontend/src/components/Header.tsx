@@ -7,6 +7,8 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown, faEraser } from "@fortawesome/free-solid-svg-icons";
 
+const VERSION = "v1.1";
+
 interface Btn {
     name: string,
     icon: IconDefinition;
@@ -24,8 +26,6 @@ interface HeaderProps {
 }
 
 export default function Header({ filename, onInsert, onInject, onReset, loading, filled }: HeaderProps) {
-    const version = "v1.0";
-
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     const buttons: Btn[] = [
@@ -47,7 +47,7 @@ export default function Header({ filename, onInsert, onInject, onReset, loading,
                         height="30"
                     />
                     <p className="font-semibold">
-                        Clustio · {version}
+                        Clustio · {VERSION}
                     </p>
                 </a>
 
